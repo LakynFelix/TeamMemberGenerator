@@ -5,6 +5,6 @@ test('creates a new Employee'), () => {
 
 expect(Employee.name).toBe('Lakyn');
 expect(Employee.role).toBe('Employee');
-expect(Employee.email).toBe('lakynmphotography@hotmail.com');
+expect(Employee.id).toBe('lakynmphotography@hotmail.com');
 expect(Employee.phone).toBe('135634');
 });
