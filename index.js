@@ -61,7 +61,7 @@ const promptUser = () => {
         type: 'checkbox',
         name: 'role',
         message: 'What is your main role ?',
-        choices: ['Manager', 'Emplyee', 'Engineer', 'Intern']
+        choices: ['Manager', 'Employee', 'Engineer', 'Intern']
       },
 
       {
@@ -70,8 +70,18 @@ const promptUser = () => {
         message: 'Would you like to add another employee?',
         default: false
       }
+    ])
+    .then(projectData => {
+      portfolioData.projects.push(projectData);
+      if (projectData.confirmAddProject) {
+        return promptProject(portfolioData);
+      } else {
+        return portfolioData;
+      }
+    });
+};
 
-      promptUser()
+promptUser()
   .then(promptProject)
   .then(portfolioData => {
     return generatePage(portfolioData);
