@@ -11,7 +11,7 @@ const writeFile = fileContent => {
 
       resolve({
         ok: true,
-        message: 'File created!'
+        message: 'File was created!'
       });
     });
   });
@@ -28,10 +28,10 @@ const copyFile = () => {
 
       resolve({
         ok: true,
-        message: 'Stylesheet created!'
+        message: 'Stylesheet  was created!'
       });
     });
   });
 };
 
-module.exports = { writeFile, copyFile };
+module.exports = { writeFile};
