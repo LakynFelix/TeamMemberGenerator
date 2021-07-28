@@ -1,5 +1,5 @@
 test('creates a new Manager'), () => {
-    const Employee(new Employee('Samantha', 'Manager', 'sams@gmail.com', '135624' '1'));
+    const Employee(new Employee('Samantha', 'Manager', 'sams@gmail.com', '135624' , '1'));
 
 expect(Employee.name).toBe('Antony');
 expect(Employee.role).toBe('Manager');
