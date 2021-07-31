@@ -1,4 +1,4 @@
-const { writeFile, copyFile } = require('./utils/generate-site.js');
+const { writeFile } = require('./dist/generate-site.js');
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
 
@@ -61,7 +61,7 @@ const promptUser = () => {
         type: 'checkbox',
         name: 'role',
         message: 'What is your main role ?',
-        choices: ['Manager', 'Employee', 'Engineer', 'Intern']
+        choices: ['Manager', 'Emplooyee', 'Engineer', 'Intern']
       },
 
       {
@@ -73,7 +73,7 @@ const promptUser = () => {
     ])
     .then(projectData => {
       portfolioData.projects.push(projectData);
-      if (projectData.confirmAddProject) {
+      if (projectData.confirmAddEmployee) {
         return promptProject(portfolioData);
       } else {
         return portfolioData;
@@ -92,9 +92,6 @@ promptUser()
   .then(writeFileResponse => {
     console.log(writeFileResponse);
     return copyFile();
-  })
-  .then(copyFileResponse => {
-    console.log(copyFileResponse);
   })
   .catch(err => {
     console.log(err);
