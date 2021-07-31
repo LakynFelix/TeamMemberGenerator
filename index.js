@@ -1,14 +1,15 @@
-const { writeFile } = require('./dist/generate-site.js');
+
 const inquirer = require('inquirer');
 const generatePage = require('./src/page-template');
+const { writeFile } = require('./dist/generate-site.js');
+const  employeeArray = [];
 
-
-const promptUser = () => {
+const promptManager = () => {
     return inquirer.prompt([
       {
         type: 'input',
         name: 'name',
-        message: 'What is your name? (Required)',
+        message: 'What is your Managers Name? (Required)',
         validate: nameInput => {
           if (nameInput) {
             return true;
@@ -38,10 +39,6 @@ const promptUser = () => {
         validate: nameInput => {
           if (nameInput) {
             return true;
-          } else {
-            console.log('Please enter your office number ');
-            return false;
-          }
         }
       },
        {
@@ -58,41 +55,28 @@ const promptUser = () => {
         },
       },
       {
-        type: 'checkbox',
-        name: 'role',
-        message: 'What is your main role ?',
-        choices: ['Manager', 'Emplooyee', 'Engineer', 'Intern']
-      },
+        type: 'list',
+        name: 'addEmployee',
+        message: 'What you like to add an Employee to your team?',
+        choices: ['Engineer', 'Intern', 'None']
+    }
+    ]) .then(managerData => {
+      const { name, id, email, officeNumber, addEmployee } = managerData;
+      const manager = new Manager (name, id, email, officeNumber);
 
-      {
-        type: 'confirm',
-        name: 'confirmAddEmployee',
-        message: 'Would you like to add another employee?',
-        default: false
-      }
-    ])
-    .then(projectData => {
-      portfolioData.projects.push(projectData);
-      if (projectData.confirmAddEmployee) {
-        return promptProject(portfolioData);
+      employeeArray.push(manager);
+
+      if (addEmployee === "Engineer") {
+          return promptEngineer();
+      } else if (addEmployee === "Intern") {
+          return promptIntern();
       } else {
-        return portfolioData;
+          return employeeArray;
       }
-    });
+
+  })
 };
 
-promptUser()
-  .then(promptProject)
-  .then(portfolioData => {
-    return generatePage(portfolioData);
-  })
-  .then(pageHTML => {
-    return writeFile(pageHTML);
-  })
-  .then(writeFileResponse => {
-    console.log(writeFileResponse);
-    return copyFile();
-  })
-  .catch(err => {
-    console.log(err);
-  });
+      
+
+

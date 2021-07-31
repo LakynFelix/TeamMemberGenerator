@@ -23,11 +23,11 @@ const generateIntern = Intern => {
       <div class="card">
       <div class="card-header">
           <h3>${Intern.name}</h3>
-          <h2><i class="fa-solid fa-user-graduate"></i> Intern </h2>
+          <h2><i class="fa-solid fa-user-graduate"></i>Intern</h2>
       </div>
       <ul class="">
           <li class="list-group-item">Email: <a href="mailto:${Intern.email}</a></li>
-          <li class="list-group-item">ID: ${Intern.id}</li>
+          <li class="list-group-item">ID:${Intern.id}</li>
       </ul>
       </div>
   </div>
@@ -39,7 +39,7 @@ const generateEngineer = Engineer => {
       <div class="card">
       <div class="card-header">
           <h3>${Engineer.name}</h3>
-          <h2><i class="fa-solid fa-glasses"></i> Engineer </h2>
+          <h2><i class="fa-solid fa-glasses"></i>Engineer</h2>
       </div>
       <ul class="">
           <li class="list-group-item">Email: <a href="mailto:${Engineer.email}</a></li>
