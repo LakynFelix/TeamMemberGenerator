@@ -1,5 +1,4 @@
-
-const generateManager = Manager => {
+const generateManager = (Manager) => {
   return `
   <div class="col-4">
       <div class="card">
@@ -15,9 +14,9 @@ const generateManager = Manager => {
       </div>
   </div>
   `;
-}
-   
-const generateIntern = Intern => {
+};
+
+const generateIntern = (Intern) => {
   return `
   <div class="col-4">
       <div class="card">
@@ -32,8 +31,8 @@ const generateIntern = Intern => {
       </div>
   </div>
   `;
-}
-const generateEngineer = Engineer => {
+};
+const generateEngineer = (Engineer) => {
   return `
   <div class="col-4">
       <div class="card">
@@ -49,10 +48,10 @@ const generateEngineer = Engineer => {
       </div>
   </div>
   `;
-}
-    
-const generatePage = cards => {
-    return `
+};
+
+const generatePage = (cards) => {
+  return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,12 +80,30 @@ const generatePage = cards => {
 `;
 };
 
-const generateHtml = (Manager, Intern, Engineer) => {
-    return generatePage(
-        generateManager(Manager),
-        generateIntern(Intern),
-        generateEngineer(Engineer)
-    );
-}   
+const generateHTML = data => {
+    
+    let cards = [];
+    
+    for(i = 0; i < data.length; i++) {
+
+        const employee = data[i]
+        const role = employee.getRole();
+        
+        if (role === "manager") {
+            const managerCard = generateManager(employee)
+            cards.push(managerCard)
+
+        } else if (role === "engineer") {
+            const engineerCard = generateEngineer(employee)
+            cards.push(engineerCard)
+
+        } else {
+            const internCard = generateIntern(employee)
+            cards.push(internCard)
+        }
+    }
+
+    return generatePage(cards);
+}
 
 module.exports = generateHTML;

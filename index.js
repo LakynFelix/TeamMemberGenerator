@@ -1,11 +1,10 @@
 const inquirer = require("inquirer");
-const generatePage = require("./src/page-template");
+const generateHtml = require("./src/page-template");
 const { writeFile } = require("./dist/generate-site.js");
 
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
-
 
 const employeeArray = [];
 
@@ -61,7 +60,6 @@ const promptManager = () => {
           }
         },
       },
-​
       {
         type: "checkbox",
         name: "addEmployee",
@@ -70,12 +68,9 @@ const promptManager = () => {
       },
     ])
     .then((engineerData) => {
-      const { name, id, email, officeNumber, github, addEmployee } =
-        engineerData;
+      const { name, id, email, officeNumber, github, addEmployee } = engineerData;
       const engineer = new Engineer(name, id, email, officeNumber, github);
-​
       employeeArray.push(engineer);
-​
       if (addEmployee === "Engineer") {
         return promptEngineer();
       } else if (addEmployee === "Intern") {
@@ -85,7 +80,6 @@ const promptManager = () => {
       }
     });
 };
-​
 const promptEngineer = () => {
   return inquirer
     .prompt([
@@ -161,9 +155,7 @@ const promptEngineer = () => {
       const { name, id, email, officeNumber, github, addEmployee } =
         engineerData;
       const engineer = new Engineer(name, id, email, officeNumber, github);
-​
       employeeArray.push(engineer);
-​
       if (addEmployee === "Engineer") {
         return promptEngineer();
       } else if (addEmployee === "Intern") {
@@ -173,7 +165,6 @@ const promptEngineer = () => {
       }
     });
 };
-​
 const promptIntern = () => {
   return inquirer
     .prompt([
@@ -239,9 +230,7 @@ const promptIntern = () => {
     .then((internData) => {
       const { name, id, email, school, addEmployee } = internData;
       const intern = new Intern(name, id, email, school);
-​
       employeeArray.push(intern);
-​
       if (addEmployee === "Engineer") {
         return promptEngineer();
       } else if (addEmployee === "Intern") {
@@ -253,13 +242,13 @@ const promptIntern = () => {
 };
 
 promptManager()
-    .then(employeeArray => {
-        return generateHTML(employeeArray);
-    })
-    .then( data => {
-        console.log("Your Crew has been created")
-        return writeFile(data);
-    })
-    .catch(err => {
-        console.log(err);
-    }) ;
+  .then((employeeArray) => {
+    return generatePage(employeeArray);
+  })
+  .then((data) => {
+    console.log("Your Crew has been created");
+    return writeFile(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });

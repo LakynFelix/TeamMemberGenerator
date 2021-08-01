@@ -1,9 +1,9 @@
-const fs = require('fs');
+const fs = require("fs");
 
 // writing files
-const writeFile = fileContent => {
+const writeFile = (fileContent) => {
   return new Promise((resolve, reject) => {
-    fs.writeFile('./dist/index.html', fileContent, err => {
+    fs.writeFile("./dist/index.html", fileContent, (err) => {
       if (err) {
         reject(err);
         return;
@@ -11,27 +11,10 @@ const writeFile = fileContent => {
 
       resolve({
         ok: true,
-        message: 'File was created!'
+        message: "Your Crew was created!",
       });
     });
   });
 };
 
-// copying file
-const copyFile = () => {
-  return new Promise((resolve, reject) => {
-    fs.copyFile('./src/style.css', './dist/style.css', err => {
-      if (err) {
-        reject(err);
-        return;
-      }
-
-      resolve({
-        ok: true,
-        message: 'Stylesheet  was created!'
-      });
-    });
-  });
-};
-
-module.exports = { writeFile};
+module.exports = writeFile;
