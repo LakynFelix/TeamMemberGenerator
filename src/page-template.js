@@ -7,10 +7,10 @@ const generateManager = Manager => {
           <h3>${Manager.name}</h3>
           <h2><i class="fas fa-mug-hot"></i>Manager</h2>
       </div>
-      <ul class="">
-          <li class="list-group-item">ID: ${Manager.id}</li>
-          <li class="list-group-item">Email: <a href="mailto:${Manager.email}</a></li>
-          <li class="list-group-item">Office Number: ${Manager.officeNumber}</li>
+      <ul class="content">
+          <li class="list-items">ID: ${Manager.id}</li>
+          <li class="list-items">Email: <a href="mailto:${Manager.email}</a></li>
+          <li class="list-items">Office Number: ${Manager.officeNumber}</li>
       </ul>
       </div>
   </div>
@@ -25,9 +25,9 @@ const generateIntern = Intern => {
           <h3>${Intern.name}</h3>
           <h2><i class="fa-solid fa-user-graduate"></i>Intern</h2>
       </div>
-      <ul class="">
-          <li class="list-group-item">Email: <a href="mailto:${Intern.email}</a></li>
-          <li class="list-group-item">ID:${Intern.id}</li>
+      <ul class="content">
+          <li class="list-items">Email: <a href="mailto:${Intern.email}</a></li>
+          <li class="list-items">ID:${Intern.id}</li>
       </ul>
       </div>
   </div>
@@ -41,10 +41,10 @@ const generateEngineer = Engineer => {
           <h3>${Engineer.name}</h3>
           <h2><i class="fa-solid fa-glasses"></i>Engineer</h2>
       </div>
-      <ul class="">
-          <li class="list-group-item">Email: <a href="mailto:${Engineer.email}</a></li>
-          <li class="list-group-item"> GItHub: <a href="mailto:${Engineer.github}</a></li>
-          <li class="list-group-item">ID: ${Engineer.id}</li>
+      <ul class="content">
+          <li class="list-items">Email: <a href="mailto:${Engineer.email}</a></li>
+          <li class="list-items"> GItHub: <a href="mailto:${Engineer.github}</a></li>
+          <li class="list-items">ID: ${Engineer.id}</li>
       </ul>
       </div>
   </div>
@@ -70,6 +70,9 @@ const generatePage = cards => {
         ${cards}
     </div>
 </body>
+<div class="footer">
+      <h2>Made with ❤️️ By Lakyn M Felix &copy; 2021 </h2>
+  </div> 
 </html>
 `;
 };

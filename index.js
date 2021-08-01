@@ -20,7 +20,7 @@ const promptManager = () => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter your Name!");
+            console.log("Please enter a Name!");
             return false;
           }
         },
