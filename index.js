@@ -194,6 +194,7 @@ const promptEngineer = () => {
                 return false;
               }
             }
+          }
               {
                 type: "input",
                 name: "linkemail",
@@ -219,15 +220,16 @@ const promptEngineer = () => {
               console.log('Please enter your school name');
               return false;
             }
+          
           },
+        }
         {
-          type: 'checkbox',
+         type: 'checkbox',
            name: 'addEmployee',
           message: 'What you like to add another Employee to your team?',
           choices: ['Engineer', 'Intern', 'None']
-        },
+        }
         ])
-        
         .then(internData => {
           const { name, id, email, school, addEmployee } = internData;
           const intern = new Intern (name, id, email, school);
@@ -241,4 +243,4 @@ const promptEngineer = () => {
           } else {
             return employeeArray;
           }
-        }
+        });
