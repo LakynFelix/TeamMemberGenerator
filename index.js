@@ -43,19 +43,21 @@ const promptManager = () => {
         }
       },
     }
-      {
-        type: "input",
-        name: "linkemail",
-        message: "Please enter your email address (Required)",
-        validate: (linkInput) => {
-          if (linkInput) {
-            return true;
-          } else {
-            console.log("You need enter a email address (Required)");
-            return false;
-          }
-        },
-      }    
+      
+     {
+      type: "input",
+      name: "linkemail",
+      message: "Please enter your email address (Required)",
+      validate: (linkInput) => {
+        if (linkInput) {
+          return true;
+        } else {
+          console.log("You need enter a email address (Required)");
+          return false;
+        }
+      },
+    }
+      
       {
         type: 'checkbox',
         name: 'addEmployee',
@@ -220,7 +222,6 @@ const promptEngineer = () => {
               console.log('Please enter your school name');
               return false;
             }
-          
           },
         }
         {
