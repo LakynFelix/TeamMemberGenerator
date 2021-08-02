@@ -29,6 +29,12 @@ header {
      text-align: center;
 }
 
-li, a {
+ a {
     text-decoration: none;
+    
+}
+
+li  {
+
+list-style-image: url("./src/address-card-solid.svg"); 
 }

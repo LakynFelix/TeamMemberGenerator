@@ -1,12 +1,12 @@
 const Intern = require('../lib/Intern');
 
-test('creates a new Intern'), () => {
+test('creates a new Intern', () => {
+    const school = 'Algonquin college';
    
-    const Employee = new Employee('Adam', 'Intern', 'AdamTesta@gmail.com', '135904', 'Algonquin College');
+    const intern = new Intern('Adam', '135904' ,'AdamTesta@gmail.com', school);
 
-expect(Employee.name).toBe('Adam');
-expect(Employee.role).toBe('Intern');
-expect(Employee.email).toBe('AdamTesta@gmail.com');
-expect(Employee.id).toBe('135904');
-expect(Employee.school).toBe('Algonquin College');
-};
+expect(intern.getRole()).toBe('Intern');
+expect(intern.school).toBe(school);
+expect(intern.getSchool()).toBe(school);
+
+});

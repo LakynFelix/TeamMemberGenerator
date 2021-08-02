@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const generateHtml = require("./src/page-template");
-const { writeFile } = require("./dist/generate-site.js");
+const writeFile = require("./dist/generate-site.js");
 
 const Manager = require("./lib/Manager.js");
 const Engineer = require("./lib/Engineer.js");
@@ -27,12 +27,12 @@ const promptManager = () => {
       {
         type: "input",
         name: "id",
-        message: "What is your ID? (Required)",
+        message: "What is your Managers ID? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter your ID ");
+            console.log("Please enter a valid  ID ");
             return false;
           }
         },
@@ -40,7 +40,7 @@ const promptManager = () => {
       {
         type: "input",
         name: "officenumber",
-        message: "What is your office number? (Required)",
+        message: "What is your Managers office number? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
@@ -50,12 +50,12 @@ const promptManager = () => {
       {
         type: "input",
         name: "linkemail",
-        message: "Please enter your email address (Required)",
+        message: "Please enter your Managers email address (Required)",
         validate: (linkInput) => {
           if (linkInput) {
             return true;
           } else {
-            console.log("You need enter a email address (Required)");
+            console.log("You need to enter a valid  email address (Required)");
             return false;
           }
         },
@@ -67,15 +67,19 @@ const promptManager = () => {
         choices: ["Engineer", "Intern", "None"],
       },
     ])
-    .then((engineerData) => {
-      const { name, id, email, officeNumber, github, addEmployee } = engineerData;
-      const engineer = new Engineer(name, id, email, officeNumber, github);
-      employeeArray.push(engineer);
-      if (addEmployee === "Engineer") {
-        return promptEngineer();
-      } else if (addEmployee === "Intern") {
+    .then((managerData) => {
+      const { name, id, email, officeNumber, addEmployee } = managerData;
+      const manager = new Manager(name, id, email, officeNumber);
+      employeeArray.push(manager);
+      
+      console.log(addEmployee[0]);
+      if (addEmployee[0] === "Engineer") {
+        console.log("EngineerString");
+       return promptEngineer();
+      } else if (addEmployee[0] === "Intern") {
         return promptIntern();
-      } else {
+      }
+       else {
         return employeeArray;
       }
     });
@@ -86,7 +90,7 @@ const promptEngineer = () => {
       {
         type: "input",
         name: "name",
-        message: "What is your Name? (Required)",
+        message: "What is your Engineers Name? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
@@ -99,35 +103,26 @@ const promptEngineer = () => {
       {
         type: "input",
         name: "id",
-        message: "What is your ID? (Required)",
+        message: "What is your Engineers ID? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter your ID");
+            console.log("Please enter a valid ID");
             return false;
           }
         },
       },
-      {
-        type: "input",
-        name: "officenumber",
-        message: "What is your office Number? (Required)",
-        validate: (nameInput) => {
-          if (nameInput) {
-            return true;
-          }
-        },
-      },
+
       {
         type: "input",
         name: "linkemail",
-        message: "Please enter your email address (Required)",
+        message: "Please enter your Engineers email address (Required)",
         validate: (linkInput) => {
           if (linkInput) {
             return true;
           } else {
-            console.log("You need enter a email address (Required)");
+            console.log("You need enter a  valid email address (Required)");
             return false;
           }
         },
@@ -135,12 +130,12 @@ const promptEngineer = () => {
       {
         type: "input",
         name: "github",
-        message: "Please enter your GitHub username.",
+        message: "Please enter your Engineers GitHub username.",
         validate: (githubInput) => {
           if (githubInput) {
             return true;
           } else {
-            console.log("Please enter your GitHub username");
+            console.log("Please enter a valid GitHub username");
           }
         },
       },
@@ -152,13 +147,13 @@ const promptEngineer = () => {
       },
     ])
     .then((engineerData) => {
-      const { name, id, email, officeNumber, github, addEmployee } =
+      const { name, id, email ,github, addEmployee } =
         engineerData;
-      const engineer = new Engineer(name, id, email, officeNumber, github);
+      const engineer = new Engineer(name, id, email, github);
       employeeArray.push(engineer);
-      if (addEmployee === "Engineer") {
+      if (addEmployee[0] === "Engineer") {
         return promptEngineer();
-      } else if (addEmployee === "Intern") {
+      } else if (addEmployee[0] === "Intern") {
         return promptIntern();
       } else {
         return employeeArray;
@@ -171,7 +166,7 @@ const promptIntern = () => {
       {
         type: "input",
         name: "name",
-        message: "What is your Name? (Required)",
+        message: "What is your Interns Name? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
@@ -184,7 +179,7 @@ const promptIntern = () => {
       {
         type: "input",
         name: "id",
-        message: "What is your ID? (Required)",
+        message: "What is your Interns ID? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
@@ -197,12 +192,12 @@ const promptIntern = () => {
       {
         type: "input",
         name: "linkemail",
-        message: "Please enter your email address (Required)",
+        message: "Please enter your Intern email address (Required)",
         validate: (linkInput) => {
           if (linkInput) {
             return true;
           } else {
-            console.log("You need enter a email address (Required)");
+            console.log("You need enter a valid email address (Required)");
             return false;
           }
         },
@@ -210,7 +205,7 @@ const promptIntern = () => {
       {
         type: "input",
         name: "school",
-        message: "What is the name of your school? (Required)",
+        message: "What is the name of your Interns school? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
@@ -231,9 +226,9 @@ const promptIntern = () => {
       const { name, id, email, school, addEmployee } = internData;
       const intern = new Intern(name, id, email, school);
       employeeArray.push(intern);
-      if (addEmployee === "Engineer") {
+      if (addEmployee[0] === "Engineer") {
         return promptEngineer();
-      } else if (addEmployee === "Intern") {
+      } else if (addEmployee[0] === "Intern") {
         return promptIntern();
       } else {
         return employeeArray;
@@ -243,7 +238,7 @@ const promptIntern = () => {
 
 promptManager()
   .then((employeeArray) => {
-    return generatePage(employeeArray);
+    return generateHtml(employeeArray);
   })
   .then((data) => {
     console.log("Your Crew has been created");

@@ -1,11 +1,12 @@
 const Engineer = require('../lib/Engineer');
 
-test('creates a new Engineer'), () => {
-    const Employee = new Employee('Antony', 'Engineer', 'anthony.eryk@gmail.com', '135684', 'github@AntonyD');
+test('creates a new Engineer', () => {
+    const github = "git@github";
+    const engineer = new Engineer('Antony', '135684','anthony.eryk@gmail.com',github);
 
-expect(Employee.name).toBe('Antony');
-expect(Employee.role).toBe('Engineer');
-expect(Employee.email).toBe('anthony.eryk@gmail.com');
-expect(Employee.id).toBe('135684');
-expect(Employee.github).toBe('github@AntonyD');
-};;
+
+expect(engineer.getRole()).toBe('Engineer');
+expect(engineer.getGithub()).toBe(github);
+expect(engineer.github).toBe(github);
+
+});
