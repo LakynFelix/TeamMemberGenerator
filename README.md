@@ -23,6 +23,7 @@ Using Node js we took in info from the user about the managers name id email and
 ## Email: Lakynmphotography@hotmail.com 
 
 ## Preview of Project
+![image](https://user-images.githubusercontent.com/84104126/127830965-50cefc32-42a2-4097-9b6a-de4415d37f4d.png)
 
 
 # License:  
