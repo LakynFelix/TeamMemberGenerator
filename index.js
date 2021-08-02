@@ -71,15 +71,12 @@ const promptManager = () => {
       const { name, id, email, officeNumber, addEmployee } = managerData;
       const manager = new Manager(name, id, email, officeNumber);
       employeeArray.push(manager);
-      
-      console.log(addEmployee[0]);
+
       if (addEmployee[0] === "Engineer") {
-        console.log("EngineerString");
-       return promptEngineer();
+        return promptEngineer();
       } else if (addEmployee[0] === "Intern") {
         return promptIntern();
-      }
-       else {
+      } else {
         return employeeArray;
       }
     });
@@ -147,8 +144,7 @@ const promptEngineer = () => {
       },
     ])
     .then((engineerData) => {
-      const { name, id, email ,github, addEmployee } =
-        engineerData;
+      const { name, id, email, github, addEmployee } = engineerData;
       const engineer = new Engineer(name, id, email, github);
       employeeArray.push(engineer);
       if (addEmployee[0] === "Engineer") {

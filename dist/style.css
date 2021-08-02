@@ -1,40 +1,55 @@
 body {
-    background-color: black;
-    font-family: 'Roboto', sans-serif;
+  background-color: rgb(12, 5, 20);
+  font-family: "Roboto", sans-serif;
 }
 
 header {
-    background-color:#B33771;
-    color: white;
-    text-align: center;
-    font-style: italic;
-    padding: 30px 0;
-    margin-bottom: 80px;    
+  border-radius: 70px;
+  color: white;
+  padding-top: 5px;
+  text-align: center;
+  font-style: italic;
+  padding: 30px 0;
+  margin-bottom: 50px;
 }
 
 .card {
-    margin-bottom: 40px;
-    border-radius: 10px;
-    background-color: #182C61;
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  background-color: #182c61;
 }
-
+h3 {
+  border-radius: 10px;
+}
 .row {
     justify-content: center;
+  display: flex;
 }
 
 .card-header {
-    color: white;
-    font-weight: bold;
-    background-color: #6D214F;
-     text-align: center;
+  color: white;
+  font-weight: bold;
+  background-color: #6d214f;
+  text-align: center;
+  border-radius: 10px;
 }
 
- a {
-    text-decoration: none;
-    
+a {
+  text-decoration: none;
+  color: white;
 }
 
-li  {
+li {
+  list-style-image: url("src/address-card-solid.svg");
+}
 
-list-style-image: url("./src/address-card-solid.svg"); 
+h2 {
+  text-align: center;
+}
+
+.footer {
+  color: white;
+  text-align: center;
 }

@@ -1,14 +1,14 @@
 const generateManager = (Manager) => {
   return `
-  <div class="col-4">
+  <div class="col-6 col-sm-3">
       <div class="card">
       <div class="card-header">
-          <h3>${Manager.name}</h3>
-          <h2><i class="fas fa-mug-hot"></i>Manager</h2>
+          <h2>${Manager.name}</h2>
+          <h3><i class="fas fa-mug-hot"></i>Manager</h3>
       </div>
       <ul class="content">
           <li class="list-items">ID: ${Manager.id}</li>
-          <li class="list-items">Email: <a href="mailto:${Manager.email}</a></li>
+          <li class="list-items">Email: <a href="mailto:${Manager.email}">${Manager.email}</a></li>
           <li class="list-items">Office Number: ${Manager.officeNumber}</li>
       </ul>
       </div>
@@ -18,15 +18,16 @@ const generateManager = (Manager) => {
 
 const generateIntern = (Intern) => {
   return `
-  <div class="col-4">
+  <div class="col-6 col-sm-3">
       <div class="card">
       <div class="card-header">
-          <h3>${Intern.name}</h3>
-          <h2><i class="fa-solid fa-user-graduate"></i>Intern</h2>
+          <h2>${Intern.name}</h2>
+          <h3><i class="fa-solid fa-user-graduate"></i>Intern</h3>
       </div>
       <ul class="content">
-          <li class="list-items">Email: <a href="mailto:${Intern.email}</a></li>
-          <li class="list-items">ID:${Intern.id}</li>
+      <li class="list-items">ID:${Intern.id}</li>
+          <li class="list-items">Email: <a href="mailto:${Intern.email}">${Intern.email}</a></li>
+          <li class="list-group-item">School: ${Intern.school}</li>
       </ul>
       </div>
   </div>
@@ -34,16 +35,17 @@ const generateIntern = (Intern) => {
 };
 const generateEngineer = (Engineer) => {
   return `
-  <div class="col-4">
+  <div class="col-6 col-sm-3">
       <div class="card">
       <div class="card-header">
-          <h3>${Engineer.name}</h3>
-          <h2><i class="fa-solid fa-glasses"></i>Engineer</h2>
+          <h2>${Engineer.name}</h2>
+          <h3><i class="fa-solid fa-glasses"></i> Engineer</h3>
       </div>
       <ul class="content">
-          <li class="list-items">Email: <a href="mailto:${Engineer.email}</a></li>
-          <li class="list-items"> GItHub: <a href="mailto:${Engineer.github}</a></li>
-          <li class="list-items">ID: ${Engineer.id}</li>
+         <li class="list-items">ID:${Engineer.id}</li>
+          <li class="list-items">Email: <a href="mailto:${Engineer.email}">${Engineer.email}</a></li>
+          <li class="list-group-item git">GitHub: <a href="https://github.com/${Engineer.github}" target="_blank">${Engineer.github}</a></li>
+        
       </ul>
       </div>
   </div>
@@ -62,7 +64,7 @@ const generatePage = (cards) => {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="./style.css">
     <title> My Employee List </title>
 </head>
 <body>
@@ -80,30 +82,26 @@ const generatePage = (cards) => {
 `;
 };
 
-const generateHTML = data => {
-    
-    let cards = [];
-    
-    for(i = 0; i < data.length; i++) {
+const generateHTML = (data) => {
+  let cards = [];
 
-        const employee = data[i]
-        const role = employee.getRole();
-        
-        if (role === "manager") {
-            const managerCard = generateManager(employee)
-            cards.push(managerCard)
+  for (i = 0; i < data.length; i++) {
+    const employee = data[i];
+    const role = employee.getRole();
 
-        } else if (role === "engineer") {
-            const engineerCard = generateEngineer(employee)
-            cards.push(engineerCard)
-
-        } else {
-            const internCard = generateIntern(employee)
-            cards.push(internCard)
-        }
+    if (role === "Manager") {
+      const managerCard = generateManager(employee);
+      cards.push(managerCard);
+    } else if (role === "Engineer") {
+      const engineerCard = generateEngineer(employee);
+      cards.push(engineerCard);
+    } else {
+      const internCard = generateIntern(employee);
+      cards.push(internCard);
     }
+  }
 
-    return generatePage(cards);
-}
+  return generatePage(cards);
+};
 
 module.exports = generateHTML;
