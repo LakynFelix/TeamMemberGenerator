@@ -14,12 +14,12 @@ const promptManager = () => {
       {
         type: "input",
         name: "name",
-        message: "What is your Managers Name? (Required)",
+        message: "What is your Managers name? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter a Name!");
+            console.log("Please enter a valid name");
             return false;
           }
         },
@@ -32,30 +32,33 @@ const promptManager = () => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter a valid  ID ");
+            console.log("Please enter a valid ID");
             return false;
           }
         },
       },
       {
         type: "input",
-        name: "officenumber",
+        name: "officeNumber",
         message: "What is your Managers office number? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
+          } else {
+            console.log("Please enter a valid office number");
+            return false;
           }
         },
       },
       {
         type: "input",
-        name: "linkemail",
-        message: "Please enter your Managers email address (Required)",
+        name: "email",
+        message: "What is your Managers email address? (Required)",
         validate: (linkInput) => {
           if (linkInput) {
             return true;
           } else {
-            console.log("You need to enter a valid  email address (Required)");
+            console.log("Please enter a valid email address (Required)");
             return false;
           }
         },
@@ -63,7 +66,7 @@ const promptManager = () => {
       {
         type: "checkbox",
         name: "addEmployee",
-        message: "What you like to add another Employee to your team?",
+        message: "Would you like to add another Employee to your team?",
         choices: ["Engineer", "Intern", "None"],
       },
     ])
@@ -87,12 +90,12 @@ const promptEngineer = () => {
       {
         type: "input",
         name: "name",
-        message: "What is your Engineers Name? (Required)",
+        message: "What is your Engineers name? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter your Name!");
+            console.log("Please enter a valid name");
             return false;
           }
         },
@@ -113,13 +116,13 @@ const promptEngineer = () => {
 
       {
         type: "input",
-        name: "linkemail",
-        message: "Please enter your Engineers email address (Required)",
+        name: "email",
+        message: "What is your Engineers email address? (Required)",
         validate: (linkInput) => {
           if (linkInput) {
             return true;
           } else {
-            console.log("You need enter a  valid email address (Required)");
+            console.log("Please enter a valid email address");
             return false;
           }
         },
@@ -127,7 +130,7 @@ const promptEngineer = () => {
       {
         type: "input",
         name: "github",
-        message: "Please enter your Engineers GitHub username.",
+        message: "What is your Engineers GitHub username?",
         validate: (githubInput) => {
           if (githubInput) {
             return true;
@@ -162,12 +165,12 @@ const promptIntern = () => {
       {
         type: "input",
         name: "name",
-        message: "What is your Interns Name? (Required)",
+        message: "What is your Interns name? (Required)",
         validate: (nameInput) => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter your Name!");
+            console.log("Please enter a valid name");
             return false;
           }
         },
@@ -180,20 +183,20 @@ const promptIntern = () => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter your ID");
+            console.log("Please enter a valid ID");
             return false;
           }
         },
       },
       {
         type: "input",
-        name: "linkemail",
-        message: "Please enter your Intern email address (Required)",
+        name: "email",
+        message: "What is your Intern email address? (Required)",
         validate: (linkInput) => {
           if (linkInput) {
             return true;
           } else {
-            console.log("You need enter a valid email address (Required)");
+            console.log("Please enter a valid email address");
             return false;
           }
         },
@@ -206,7 +209,7 @@ const promptIntern = () => {
           if (nameInput) {
             return true;
           } else {
-            console.log("Please enter your school name");
+            console.log("Please enter a valid school name");
             return false;
           }
         },

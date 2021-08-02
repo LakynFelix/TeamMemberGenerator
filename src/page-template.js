@@ -1,10 +1,10 @@
 const generateManager = (Manager) => {
   return `
-  <div class="col-6 col-sm-3">
+  <div class="col-4">
       <div class="card">
       <div class="card-header">
           <h2>${Manager.name}</h2>
-          <h3><i class="fas fa-mug-hot"></i>Manager</h3>
+          <h3>Manager</h3>
       </div>
       <ul class="content">
           <li class="list-items">ID: ${Manager.id}</li>
@@ -18,16 +18,16 @@ const generateManager = (Manager) => {
 
 const generateIntern = (Intern) => {
   return `
-  <div class="col-6 col-sm-3">
+  <div class="col-4">
       <div class="card">
       <div class="card-header">
           <h2>${Intern.name}</h2>
-          <h3><i class="fa-solid fa-user-graduate"></i>Intern</h3>
+          <h3> Intern</h3>
       </div>
       <ul class="content">
-      <li class="list-items">ID:${Intern.id}</li>
+          <li class="list-items">ID: ${Intern.id}</li>
           <li class="list-items">Email: <a href="mailto:${Intern.email}">${Intern.email}</a></li>
-          <li class="list-group-item">School: ${Intern.school}</li>
+          <li class="list-items">School: ${Intern.school}</li>
       </ul>
       </div>
   </div>
@@ -35,17 +35,16 @@ const generateIntern = (Intern) => {
 };
 const generateEngineer = (Engineer) => {
   return `
-  <div class="col-6 col-sm-3">
+  <div class="col-4">
       <div class="card">
       <div class="card-header">
           <h2>${Engineer.name}</h2>
-          <h3><i class="fa-solid fa-glasses"></i> Engineer</h3>
+          <h3> Engineer</h3>
       </div>
       <ul class="content">
-         <li class="list-items">ID:${Engineer.id}</li>
+         <li class="list-items">ID: ${Engineer.id}</li> 
           <li class="list-items">Email: <a href="mailto:${Engineer.email}">${Engineer.email}</a></li>
-          <li class="list-group-item git">GitHub: <a href="https://github.com/${Engineer.github}" target="_blank">${Engineer.github}</a></li>
-        
+          <li class="list-items">GitHub: <a href="https://github.com/${Engineer.github}" target="_blank">${Engineer.github}</a></li>
       </ul>
       </div>
   </div>
@@ -57,13 +56,11 @@ const generatePage = (cards) => {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/f175fc73c6.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./style.css">
     <title> My Employee List </title>
 </head>
@@ -76,7 +73,7 @@ const generatePage = (cards) => {
     </div>
 </body>
 <div class="footer">
-      <h2>Made with ❤️️ By Lakyn M Felix &copy; 2021 </h2>
+      <p>Made with ❤️️ By Lakyn M Felix &copy; 2021 </p>
   </div> 
 </html>
 `;
