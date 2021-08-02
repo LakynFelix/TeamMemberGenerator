@@ -4,7 +4,7 @@
 * [Usage](#languages)  
 * [Project](#nameofproject)    
 * [Licenses](#licenses)   
-* [Collaborators](#collaborators)   
+ 
  
 
 # Team Member Generator 
@@ -17,7 +17,7 @@ Using Node js we took in info from the user about the managers name id email and
   JavaScript,HTML,CSS,ES6,Node   
 
 
-##  Team Member Generator 
+# Team Member Generator 
 ## GitHub Profile:  https://github.com/LakynFelix   
 ## GitHub Repo: https://github.com/LakynFelix/TeamMemberGenerator  
 ## Email: Lakynmphotography@hotmail.com 
@@ -27,7 +27,4 @@ Using Node js we took in info from the user about the managers name id email and
 
 
 # License:  
-undefined
-  
- # Collaborators:
  None   
