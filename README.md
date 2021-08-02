@@ -12,7 +12,7 @@
  
 # Description: 
 Using Node js we created an application that accepts info from the user about the managers name id email and office number then prompted to an Engineer with a github link and Intern with info about school, then an HTML file is generated that displays your whole crew.
-<<<<<<< HEAD
+
 
 
 # Usage: 
