@@ -25,7 +25,7 @@ Using Node js we created an application that accepts info from the user about th
 ## Email: Lakynmphotography@hotmail.com 
 
 ## Preview of Project
-![image](https://user-images.githubusercontent.com/84104126/127934547-8a9fed2b-f4de-405d-959e-f21691916481.png)
+![image](https://user-images.githubusercontent.com/84104126/128062963-af17313a-c85c-4b22-84c9-d2c51e6dface.png)
 
 ## Video link 
 https://drive.google.com/file/d/1MG8E1anUUqA-UG0NK0cByKr7iPuIeLE_/view
