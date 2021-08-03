@@ -4,7 +4,7 @@ const generateManager = (Manager) => {
       <div class="card">
       <div class="card-header">
           <h2>${Manager.name}</h2>
-          <h3>Manager</h3>
+          <h3>Manager <i class="fa fa-mug-hot"></i></h3>
       </div>
       <ul class="content">
           <li class="list-items">ID: ${Manager.id}</li>
@@ -22,7 +22,7 @@ const generateIntern = (Intern) => {
       <div class="card">
       <div class="card-header">
           <h2>${Intern.name}</h2>
-          <h3> Intern</h3>
+          <h3> <i class="fa fa-graduation-cap"></i> Intern</h3>
       </div>
       <ul class="content">
           <li class="list-items">ID: ${Intern.id}</li>
@@ -39,7 +39,7 @@ const generateEngineer = (Engineer) => {
       <div class="card">
       <div class="card-header">
           <h2>${Engineer.name}</h2>
-          <h3> Engineer</h3>
+          <h3>Engineer <i class="fa fa-glasses"></h3>
       </div>
       <ul class="content">
          <li class="list-items">ID: ${Engineer.id}</li> 
@@ -59,8 +59,25 @@ const generatePage = (cards) => {
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://kit.fontawesome.com/c502137733.js"></script>
 <script src="https://kit.fontawesome.com/f175fc73c6.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/c502137733.js"></script>
 <link rel="stylesheet" href="./style.css">
     <title> My Employee List </title>
 </head>

@@ -1,66 +1,85 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://kit.fontawesome.com/f175fc73c6.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="./style.css">
-    <title> My Employee List </title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script
+      src="https://kit.fontawesome.com/f175fc73c6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+
+    <title>My Employee List</title>
+  </head>
+  <body>
     <header>
-        <h1> My Crew </h1>
+      <h1>My Crew</h1>
     </header>
     <div class="row">
-        
-  <div class="col-4">
-      <div class="card">
-      <div class="card-header">
-          <h2>Sam S</h2>
-          <h3>Manager</h3>
+      <div class="col-4">
+        <div class="card">
+          <div class="card-header">
+            <h2>Sam S</h2>
+            <h3>Manager <i class="fa fa-mug-hot"></i></h3>
+          </div>
+          <ul class="content">
+            <li class="list-items">ID: 2</li>
+            <li class="list-items">
+              Email: <a href="mailto:Sam@gmail.com">Sam@gmail.com</a>
+            </li>
+            <li class="list-items">Office Number: 2</li>
+          </ul>
+        </div>
       </div>
-      <ul class="content">
-          <li class="list-items">ID: 2</li>
-          <li class="list-items">Email: <a href="mailto:Sam@gmail.com">Sam@gmail.com</a></li>
-          <li class="list-items">Office Number: 2</li>
-      </ul>
+      ,
+      <div class="col-4">
+        <div class="card">
+          <div class="card-header">
+            <h2>Lakyn F</h2>
+            <h3>Engineer <i class="fa fa-glasses"></i></h3>
+          </div>
+          <ul class="content">
+            <li class="list-items">ID: 13</li>
+            <li class="list-items">
+              Email: <a href="mailto:Lakyn@gmail.com">Lakyn@gmail.com</a>
+            </li>
+            <li class="list-items">
+              GitHub:
+              <a href="https://github.com/LakynFelix" target="_blank"
+                >LakynFelix</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-  </div>
-  ,
-  <div class="col-4">
-      <div class="card">
-      <div class="card-header">
-          <h2>Lakyn F</h2>
-          <h3> Engineer</h3>
+      ,
+      <div class="col-4">
+        <div class="card">
+          <div class="card-header">
+            <h2>Antony</h2>
+            <h3><i class="fa fa-graduation-cap">
+            </i>Intern</h3>
+          </div>
+          <ul class="content">
+            <li class="list-items">ID: 19</li>
+            <li class="list-items">
+              Email: <a href="mailto:Antony@gmail.com">Antony@gmail.com</a>
+            </li>
+            <li class="list-items">School: Algonquin College</li>
+          </ul>
+        </div>
       </div>
-      <ul class="content">
-         <li class="list-items">ID: 13</li> 
-          <li class="list-items">Email: <a href="mailto:Lakyn@gmail.com">Lakyn@gmail.com</a></li>
-          <li class="list-items">GitHub: <a href="https://github.com/LakynFelix" target="_blank">LakynFelix</a></li>
-      </ul>
-      </div>
-  </div>
-  ,
-  <div class="col-4">
-      <div class="card">
-      <div class="card-header">
-          <h2>Antony</h2>
-          <h3> Intern</h3>
-      </div>
-      <ul class="content">
-          <li class="list-items">ID: 19</li>
-          <li class="list-items">Email: <a href="mailto:Antony@gmail.com">Antony@gmail.com</a></li>
-          <li class="list-items">School: Algonquin College</li>
-      </ul>
-      </div>
-  </div>
-  
     </div>
-</body>
-<div class="footer">
-      <p>Made with ❤️️ By Lakyn M Felix &copy; 2021 </p>
-  </div> 
+  </body>
+  <div class="footer">
+    <p>Made with ❤️️ By Lakyn M Felix &copy; 2021</p>
+  </div>
 </html>

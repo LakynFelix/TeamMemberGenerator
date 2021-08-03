@@ -7,6 +7,7 @@
     "lib": "lib"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "ansi-escapes": "^4.3.2",
     "ansi-regex": "^5.0.0",
     "ansi-styles": "^4.3.0",
@@ -14,6 +15,7 @@
     "balanced-match": "^1.0.2",
     "base64-js": "^1.5.1",
     "bl": "^4.1.0",
+    "bootstrap": "^5.0.2",
     "brace-expansion": "^1.1.11",
     "buffer": "^5.7.1",
     "chalk": "^4.1.1",
