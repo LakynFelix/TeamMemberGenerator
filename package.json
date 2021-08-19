@@ -35,7 +35,7 @@
     "figures": "^3.2.0",
     "filelist": "^1.0.2",
     "has-flag": "^4.0.0",
-    "iconv-lite": "^0.4.24",
+    "iconv-lite": "^0.6.3",
     "ieee754": "^1.2.1",
     "inherits": "^2.0.4",
     "inquirer": "^8.1.2",
