@@ -42,7 +42,7 @@
     "is-fullwidth-code-point": "^3.0.0",
     "is-interactive": "^1.0.0",
     "is-unicode-supported": "^0.1.0",
-    "jake": "^10.8.2",
+    "jake": "^10.8.5",
     "jes": "^0.6.1",
     "lodash": "^4.17.21",
     "log-symbols": "^4.1.0",
