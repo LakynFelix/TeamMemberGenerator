@@ -44,7 +44,7 @@
     "is-unicode-supported": "^0.1.0",
     "jake": "^10.8.2",
     "jes": "^0.6.1",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "log-symbols": "^4.1.0",
     "mimic-fn": "^2.1.0",
     "minimatch": "^3.0.4",
